@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "$mo" | awk -F'/' '{for (i=1; i<=NF; i++) print $i}' | sort | uniq | wc -l

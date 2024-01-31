@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 # Define the regular expression pattern
-pattern = /hbt*n/
+pattern = /hbt+n/
 
 # Get the input string from the command line arguments
 input_string = ARGV[0]

@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 # Define the regular expression pattern
-pattern = /^[A-Z]*$/
+pattern = /[A-Z]/
 
 # Get the input string from the command line arguments
 input_string = ARGV[0]

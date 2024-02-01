@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# this bash script to list the port
+ss -lntu

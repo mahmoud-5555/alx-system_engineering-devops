@@ -1,19 +1,2 @@
-- the OSI model is refer to the standard of classification in the interconnection process
-that describe how the data transfer in the netowrk starting from prepering the data in the sender
-antil ogy to receiving and processing it on the receiver side.
-and it classifed into 7 layer to show how devices communications work it isn't real leyers it just virtual
-to have clean understanding.
-
-"2- The OSI model is a conceptual model that characterizes the communication functions of a
-telecommunication system without regard to their underlying internal structure and technology"
-
-- OSI orgnaized:
-
-From the lowest to the highest level
-1. Physical Layer
-2. Data link Layer (or Media Access Control)
-3. Network Layer (also called Internet Layer)
-4. Transport Layer
-5. Session Layer
-6.  Presentation Layer
-7. Application Layer
+2
+2

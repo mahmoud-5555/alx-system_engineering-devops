@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# this comand that open the port
+nc -l 98

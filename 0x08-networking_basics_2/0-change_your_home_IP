@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#this  script is used for change the locul ip in hosts file 
+# Backup the original hosts file
+cp /etc/hosts /etc/hosts.bak
+
+# Update hosts file
+echo "127.0.0.2 localhost" >> /etc/hosts
+echo "8.8.8.8 facebook.com" >> /etc/hosts

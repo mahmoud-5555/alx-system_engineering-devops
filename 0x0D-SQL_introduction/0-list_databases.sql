@@ -1,2 +1,2 @@
-/*this script should print databases*/
+--this script should print databases
 SHOW DATABASES;

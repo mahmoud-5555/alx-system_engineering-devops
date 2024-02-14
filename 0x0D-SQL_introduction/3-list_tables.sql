@@ -1,2 +1,2 @@
-/*this script should list table*/
+--this script should list table
 SHOW TABLES;

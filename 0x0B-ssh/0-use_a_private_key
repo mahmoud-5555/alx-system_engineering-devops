@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Connection command
+ssh ubuntu@34.207.121.122

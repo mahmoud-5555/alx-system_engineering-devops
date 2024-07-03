@@ -1,27 +1,16 @@
 #!/usr/bin/env bash
 # install nginx
+sudo apt-get update -y
 sudo apt-get install nginx -y
 #
 # Create a simple HTML file containing "Hello World!"
 echo "Hello World!" | sudo tee /var/www/html/index.html
 
 # Configure Nginx to listen on port 80 and serve the created HTML file
-NGINX_CONF="/etc/nginx/sites-available/default"
-sudo bash -c "cat > $NGINX_CONF" <<EOF
-server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-
-    server_name _;
-
-    root /var/www/html;
-    index index.html;
-
-    location / {
-        try_files \$uri \$uri/ =404;
-    }
-}
-EOF
+sudo service nginx start
+sudo ufw allow 'Nginx HTTP'
+sudo chmod -R "$USER":"$USER" /var/www/html
+sudo chmod -R 755 /var/www
 
 # Test Nginx configuration
 sudo nginx -t

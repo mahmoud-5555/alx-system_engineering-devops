@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# install nginx
+sudo apt-get update -y
+sudo apt-get install nginx -y
+CONFIG_FILE="/etc/nginx/sites-available/default"
+# Create a simple HTML file containing "Hello World!"
+echo "Hello World!" | sudo tee /var/www/html/index.html
+
+# Configure Nginx to listen on port 80 and serve the created HTML file
+sudo service nginx start
+sudo ufw allow 'Nginx HTTP'
+sudo chmod -R "$USER":"$USER" /var/www/html
+sudo chmod -R 755 /var/www
+
+# Backup the original configuration file
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
+# Create a new configuration file with the desired changes
+sudo bash -c "cat > $CONFIG_FILE" <<EOF
+server {
+    listen 80;
+    server_name 34.207.121.122;
+
+    location /redirect_me {
+        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+    }
+}
+EOF
+
+# Reload Nginx configuration (without using systemctl)
+sudo nginx -s reload
+sudo service nginx retart

@@ -17,11 +17,21 @@ sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.ba
 # Create a new configuration file with the desired changes
 sudo bash -c "cat > $CONFIG_FILE" <<EOF
 server {
+    server {
     listen 80;
-    server_name 34.207.121.122;
+        listen [::]:80;
 
-    location /redirect_me {
+    server_name 18.204.15.16;
+
+   root /var/www/html;
+    index index.html;
+
+   location /redirect_me {
         return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+    }
+
+    location / {
+        try_files \$uri \$uri/ =404;
     }
 }
 EOF

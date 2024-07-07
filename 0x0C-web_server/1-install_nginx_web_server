@@ -1,22 +1,22 @@
-#!/usr/bin/env bash
-# install nginx
-sudo apt-get update -y
-sudo apt-get install nginx -y
-#
-# Create a simple HTML file containing "Hello World!"
-echo "Hello World!" | sudo tee /var/www/html/index.html
+	#!/usr/bin/env bash
+	# install nginx
+	sudo apt-get update -y
+	sudo apt-get install nginx -y
+	#
+	# Create a simple HTML file containing "Hello World!"
+	echo "Hello World!" | sudo tee /var/www/html/index.html
 
-# Configure Nginx to listen on port 80 and serve the created HTML file
-sudo service nginx start
-sudo ufw allow 'Nginx HTTP'
-sudo chmod -R "$USER":"$USER" /var/www/html
-sudo chmod -R 755 /var/www
+	# Configure Nginx to listen on port 80 and serve the created HTML file
+	sudo service nginx start
+	sudo ufw allow 'Nginx HTTP'
+	sudo chmod -R "$USER":"$USER" /var/www/html
+	sudo chmod -R 755 /var/www
 
-# Test Nginx configuration
-sudo nginx -t
+	# Test Nginx configuration
+	sudo nginx -t
 
-# Reload Nginx configuration (without using systemctl)
-sudo nginx -s reload
+	# Reload Nginx configuration (without using systemctl)
+	sudo nginx -s reload
 
-# Verify the setup by making a GET request to the root
-curl http://localhost
+	# Verify the setup by making a GET request to the root
+	curl http://localhost

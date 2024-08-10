@@ -1,0 +1,28 @@
+#!/bin/bash
+# This bash script for intall AHproxy
+
+sudo apt-get update -y
+sudo apt install haproxy -y
+CONFIG_FILE="/configAhproxy-loadblancer.cfg"
+
+
+sudo bash -c "cat > $CONFIG_FILE" <<EOF
+frontend loadblancer
+	bind *:80
+	timeout client 20s
+	default_backend loadblancer
+backend loadblancer
+	timeout connect 3s
+	timeout server 3s
+
+	server 517645-web-01 18.204.15.16:80
+	server 517645-web-02 100.25.48.112:80
+EOF
+
+sudo haproxy -f $CONFIG_FILE
+sudo service haproxy start
+
+
+
+
+

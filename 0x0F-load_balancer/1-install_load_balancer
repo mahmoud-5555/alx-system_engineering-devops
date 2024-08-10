@@ -20,7 +20,8 @@ backend loadblancer
 EOF
 
 sudo haproxy -f $CONFIG_FILE
-sudo service haproxy start
+sudo /etc/init.d/haproxy start
+
 
 
 

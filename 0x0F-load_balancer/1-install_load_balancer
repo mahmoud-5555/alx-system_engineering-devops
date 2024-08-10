@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # This bash script for intall AHproxy
 
 sudo apt-get update -y
